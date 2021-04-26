@@ -29,7 +29,15 @@ export class ApiclienteService {
 
   add(cliente: Cliente): Observable<Response> {
     return this.http.post<Response>(this.url, cliente, httpOption);
-
   }
+
+  put(cliente: Cliente): Observable<Response> {
+    return this.http.put<Response>(this.url, cliente, httpOption);
+  }
+
+  delete(id: number): Observable<Response> {
+    return this.http.delete<Response>(this.url + '/' + id);
+  }
+
 }
 

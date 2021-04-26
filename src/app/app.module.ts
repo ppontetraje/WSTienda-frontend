@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { HomeComponent } from './home/home.component';
 import { DialogClienteComponent } from './cliente/dialog/dialogcliente.component';
+import { DialogDeleteComponent } from './common/delete/dialogdelete.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms'
     AppComponent,
     HomeComponent,
     ClienteComponent,
-    DialogClienteComponent
+    DialogClienteComponent,
+    DialogDeleteComponent
   ],
   imports: [
     BrowserModule,
