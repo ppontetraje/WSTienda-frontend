@@ -1,4 +1,5 @@
 import {Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { ApiAuthService } from "../services/apiauth.service";
 
 @Component({ 
@@ -8,16 +9,20 @@ export class LoginComponent implements OnInit{
     
     public email!: string;
     public password!: string;
-    constructor(public apiAuth: ApiAuthService){
-
+    constructor(public apiAuthService: ApiAuthService, private router: Router){
+        if(this.apiAuthService.usuarioData){
+            this.router.navigate(['/']);
+        }
     }
     ngOnInit() {
         
     }
 
     login(){
-        this.apiAuth.login(this.email, this.password).subscribe(response => {
-            console.log(response);
+        this.apiAuthService.login(this.email, this.password).subscribe(response => {
+            if(response.success){
+                this.router.navigate(['/']);
+            }
         });
     }
 
