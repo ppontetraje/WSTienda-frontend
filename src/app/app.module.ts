@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSidenavModule} from '@angular/material/sidenav';
 import { HomeComponent } from './home/home.component';
 import { DialogClienteComponent } from './cliente/dialog/dialogcliente.component';
 import { DialogDeleteComponent } from './common/delete/dialogdelete.component';
@@ -15,13 +14,17 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { FormsModule } from '@angular/forms'
+import { MatSidenavModule} from '@angular/material/sidenav';
+import { MatCardModule} from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ClienteComponent,
+    LoginComponent,
     DialogClienteComponent,
     DialogDeleteComponent
   ],
@@ -32,6 +35,7 @@ import { FormsModule } from '@angular/forms'
     MatSidenavModule,
 
     HttpClientModule,
+    MatCardModule,
     MatTableModule,
     MatDialogModule,
     MatInputModule,
