@@ -1,19 +1,20 @@
 <mat-card>
     <mat-card-title>Inicio de sesión</mat-card-title>
     <mat-card-content>
-        <p>
-            <mat-form-field>
-                <input type="text" matInput [(ngModel)]="email" placeholder="Email">
-            </mat-form-field>
-        </p>
-        <p>
-            <mat-form-field>
-                <input type="password" matInput [(ngModel)]="password" placeholder="Password">
-            </mat-form-field>
-        </p>
-        <div>
-            <button (click)="login()" mat-button>Iniciar Sesion</button>
-        </div>
-
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <p>
+                <mat-form-field>
+                    <input type="text" matInput formControlName="email" placeholder="Email">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input type="password" matInput formControlName="password" placeholder="Password">
+                </mat-form-field>
+            </p>
+            <div>
+                <button type="submit" [disabled]="!loginForm.valid" mat-button>Iniciar Sesión</button>
+            </div>
+        </form>
     </mat-card-content>
 </mat-card>

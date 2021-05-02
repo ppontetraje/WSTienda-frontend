@@ -16,7 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatCardModule} from '@angular/material/card';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { JwtInterceptor } from './security/jwt.interceptor';
 
@@ -42,8 +42,8 @@ import { JwtInterceptor } from './security/jwt.interceptor';
     MatInputModule,
     MatButtonModule,
     MatSnackBarModule,
-    FormsModule
-    
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
