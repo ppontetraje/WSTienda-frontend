@@ -16,8 +16,9 @@ const httpOption = {
 export class ApiAuthService{
     url: string = 'https://localhost:44357/api/User/login';
 
-    private userSubject!: BehaviorSubject<Usuario>;
-    
+    private userSubject: BehaviorSubject<Usuario>;
+    public user!: Observable<Usuario>;
+
     public get usuarioData(): Usuario{
       return this.userSubject.value;
     } 
@@ -25,6 +26,7 @@ export class ApiAuthService{
     constructor(private _http: HttpClient){
       this.userSubject = 
       new BehaviorSubject<Usuario>(JSON.parse(localStorage.getItem('usuario')!));
+      this.user = this.userSubject.asObservable();
     }
 
     login(login: Login): Observable<Response> {

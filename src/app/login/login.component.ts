@@ -16,9 +16,9 @@ export class LoginComponent implements OnInit{
     constructor(public apiAuthService: ApiAuthService, 
         private router: Router,
         private formBuilder: FormBuilder){
-        if(this.apiAuthService.usuarioData){
+        /*if(this.apiAuthService.usuarioData){
             this.router.navigate(['/']);
-        }
+        }*/
     }
     ngOnInit() {
         
