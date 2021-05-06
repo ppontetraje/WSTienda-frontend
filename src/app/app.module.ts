@@ -19,6 +19,8 @@ import { MatCardModule} from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { JwtInterceptor } from './security/jwt.interceptor';
+import { DialogVentaComponent } from './venta/dialog/dialogventa.component';
+import { VentaComponent } from './venta/venta.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +28,10 @@ import { JwtInterceptor } from './security/jwt.interceptor';
     HomeComponent,
     ClienteComponent,
     LoginComponent,
+    VentaComponent,
     DialogClienteComponent,
-    DialogDeleteComponent
+    DialogDeleteComponent,
+    DialogVentaComponent
   ],
   imports: [
     BrowserModule,

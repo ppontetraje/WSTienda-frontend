@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Nueva Venta</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Cliente</mat-label>
+        <input matInput [(ngModel)]="venta.idCliente">
+    </mat-form-field>
+    <form [formGroup]="formDetalle" (ngSubmit)="addDetalle()">
+        <mat-form-field>
+            <mat-label>Producto</mat-label>
+            <input type="text" formControlName="idProducto" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Cantidad</mat-label>
+            <input type="text" formControlName="cantidad" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Precio Actual</mat-label>
+            <input type="text" formControlName="precioActual" matInput>
+        </mat-form-field>
+        <div>
+            <button type="submit" [disabled]="!formDetalle.valid" mat-raised-button>+</button>
+        </div>
+    </form>
+    <div>
+        <h5>Detalles</h5>
+        <table style="width: 100%;">
+            <tr>
+                <th>Cantidad</th>
+                <th>Precio Total</th>
+            </tr>
+            <tr *ngFor="let item of detalles">
+                <td>{{ item.cantidad}}</td>
+                <td>{{ item.precioActual}}</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="close()" >Cancelar</button>
+    <button mat-raised-button color="primary" (click)="addVenta()">Venta</button>
+</div>

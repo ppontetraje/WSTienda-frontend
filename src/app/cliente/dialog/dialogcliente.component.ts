@@ -46,7 +46,7 @@ export class DialogClienteComponent{
     putCliente(){
         const cliente: Cliente = {idCliente: this.cliente.idCliente, nombre: this.nombre, apellidoPaterno: this.apellidoPaterno, apellidoMaterno: this.apellidoMaterno, dni: this.dni};        
         this.apiCliente.put(cliente).subscribe(response =>{ 
-            if(response.success === true){
+            if(response.success){
                 this.dialogRef.close();
                 this.snackBar.open('Cliente Modificado con éxito', '', {
                     duration: 2000
